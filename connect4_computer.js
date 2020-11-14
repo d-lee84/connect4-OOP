@@ -127,11 +127,13 @@ class Game {
       this.makeMove(x, this.currPlayer);
       
       this.evaluateGame(this.currPlayer);
+      
+      this.canClick = false;
+      
     } else {
       return;
     }
 
-    this.canClick = false;
 
     // The computer makes a move after a random amount of time (0 - 1000ms)
     setTimeout( () => {
@@ -205,7 +207,6 @@ class Game {
   }
 }
 
-
 // The player class holds the color of the game pieces
 class Player {
   constructor(color) {
@@ -213,6 +214,8 @@ class Player {
     this.name = "Player"
   }
 }
+
+
 
 class ComputerPlayer extends Player {
   constructor(color){
